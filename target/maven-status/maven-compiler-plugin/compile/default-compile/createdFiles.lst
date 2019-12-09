@@ -1,0 +1,10 @@
+com\web\model\UserModel.class
+com\web\service\IUserService.class
+com\web\dao\IUserDao.class
+com\web\controller\client\HomeController.class
+com\web\model\AbsModel.class
+com\web\dao\impl\UserDao.class
+com\web\controller\admin\HomeController.class
+com\web\service\impl\UserService.class
+com\web\controller\admin\UserController.class
+com\web\mapper\UserMapper.class
