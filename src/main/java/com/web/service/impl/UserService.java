@@ -50,4 +50,10 @@ public class UserService implements IUserService{
 		userdao.add(user);
 	}
 
+	@Override
+	public UserModel findbyPhone(String phone) {
+		// TODO Auto-generated method stub
+		return userdao.findbyphone(phone);
+	}
+
 }
