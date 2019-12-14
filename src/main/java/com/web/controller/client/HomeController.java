@@ -2,8 +2,8 @@ package com.web.controller.client;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.web.model.CateModel;
 import com.web.service.impl.CateService;
@@ -15,12 +15,16 @@ public class HomeController {
 	private CateService cateservice;
 	
 	@RequestMapping(value="/trangchu")
-	public String home(Model model) {
+	public ModelAndView index() {
+		ModelAndView index = new ModelAndView("client/index");
 		
-		CateModel cate= new CateModel();
+		CateModel cate = new CateModel();
 		cate.setListResult(cateservice.findAll());
 		
-		model.addAttribute("cate",cate);
-		return "client/index";
+		index.addObject("cate",cate);
+		
+		
+		return index;
 	}
+	
 }

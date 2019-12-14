@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@include file="/common/taglib.jsp" %>
+	pageEncoding="UTF-8"%>
+<%@include file="/common/taglib.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,25 +8,60 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
-	<table>
-    <tr>
-      <th>Id</th>
-      <th>Name</th>
-      <th>Address</th>
-      <th>View</th>
-      <th>Edit</th>
-      <th>Delete</th>
-    </tr>
-      <c:forEach var="user" items="${listuser}">
-        <tr style="border: 1px black solid">
-          <td>${user.id}</td>
-          <td>${user.username}</td>
-          <td>${user.address}</td>
-          </tr>
-      </c:forEach>
-   
-  </table>
-	
+
+	<div class="card mb-3">
+		<div class="card-header">
+			<i class="fas fa-table"></i> User Table
+			<input type="text"/>
+		</div>
+		<div class="card-body">
+			<div class="table-responsive">
+				<table class="table table-bordered" id="dataTable" width="100%"
+					cellspacing="0">
+					<thead>
+						<tr>
+							<th>STT</th>
+							<th>user</th>
+							<th>pass</th>
+							<th>fullName</th>
+							<th>email</th>
+							<th>address</th>
+							<th>phone</th>
+							<th>status</th>
+							<th>role</th>
+							<th>Fuction</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<c:forEach var="user" items="${user.listResult}">
+							<tr>
+								<td>${user.id}</td>
+								<td>${user.username}</td>
+								<td>${user.password }</td>
+								<td>${user.fullname }</td>
+								<td>${user.email }</td>
+								<td>${user.address }</td>
+								<td>${user.phone }</td>
+								<td>${user.status}</td>
+								<td>${user.role }</td>
+								<td>
+									<a href="<c:url value='/admin/user/view/${user.id}' /> "> view </a>
+								</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="card-footer small text-muted" id ="today">
+		</div>
+		<script>
+			var today = new Date();
+			document.getElementById("today").innerHTML = today;
+		</script>
+	</div>
+
+
 </body>
 </html>

@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.web.dao.IUserDao;
 import com.web.model.UserModel;
 import com.web.service.IUserService;
 
 @Service
+@Transactional
 public class UserService implements IUserService{
 	
 	@Autowired
@@ -55,5 +57,15 @@ public class UserService implements IUserService{
 		// TODO Auto-generated method stub
 		return userdao.findbyphone(phone);
 	}
+
+	@Override
+	public boolean login(String username,String password) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
+
+	
 
 }

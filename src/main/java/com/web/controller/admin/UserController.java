@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.web.model.UserModel;
 import com.web.service.IUserService;
@@ -17,19 +19,26 @@ public class UserController {
 	private IUserService userservice;
 	
 	@RequestMapping(value="/admin/user",method = RequestMethod.GET)
-	public String index() {
+	public ModelAndView index() {
+		ModelAndView index = new ModelAndView("admin/user/index");
 		UserModel user = new UserModel();
 		
 		user.setListResult(userservice.findAll());
 		
-		return"admin/user/index";
+		index.addObject("user",user);
+		
+		return index;
 	}
-	@RequestMapping(value="/admin/user/${id}",method=RequestMethod.GET)
-	public String viewid(@PathVariable Long id, Model model) {
-		UserModel user = new UserModel();
-		user = userservice.findbyID(id);
-		model.addAttribute("user",user);
-		return "admin/user/view";
+	@RequestMapping(value="/admin/user/view",method=RequestMethod.GET)
+	public ModelAndView viewID(@RequestParam(value="id")Long id, @ModelAttribute("user") UserModel user) {
+		ModelAndView viewid = new ModelAndView("admin/user/view");
+		
+		if(id != null) {
+			user = userservice.findbyID(id);
+		}
+		viewid.addObject("user",user);
+		
+		return viewid;
 	}
 	@RequestMapping(value="/admin/user/${phone}",method = RequestMethod.GET)
 	public String viewphone(@PathVariable String phone,Model model) {
@@ -41,16 +50,20 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/admin/user/add",method = RequestMethod.GET )
-	public String add() {
-				
-		return "admin/user/add";
+	public ModelAndView add() {
+		ModelAndView add = new ModelAndView("admin/user/add");
+		return add;
 	}
 	@RequestMapping(value="/admin/user/add",method=RequestMethod.POST)
-	public String add(@ModelAttribute("user") UserModel user,Model model) {
-		userservice.add(user);
+	public ModelAndView add(@ModelAttribute("user") UserModel user,Model model) {
+		ModelAndView add = new ModelAndView("admin/user/index");
+		
 		user.setListResult(userservice.findAll());
+		
+		userservice.add(user);
 		model.addAttribute("user",user);
 		
-		return "admin/user/index";
+		add.addObject("user", model);
+		return add;
 	}
 }	

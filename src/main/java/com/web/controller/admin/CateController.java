@@ -67,6 +67,7 @@ public class CateController {
 		cate.setListResult(cateservice.findAll());
 		
 		model.addAttribute("cate", cate);
+		
 		return "admin/cate/index";
 	}
 	@RequestMapping(value="/admin/cate/delete/${id}",method=RequestMethod.DELETE)

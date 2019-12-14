@@ -8,8 +8,7 @@ public class UserModel extends AbsModel<UserModel> {
 	private String email;
 	private String phone;
 	private int status;
-	
-	
+	private Long role;
 	public String getUsername() {
 		return username;
 	}
@@ -53,5 +52,11 @@ public class UserModel extends AbsModel<UserModel> {
 	}
 	public void setStatus(int status) {
 		this.status = status;
+	}
+	public Long getRole() {
+		return role;
+	}
+	public void setRole(Long role) {
+		this.role = role;
 	}
 }

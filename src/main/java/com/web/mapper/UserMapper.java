@@ -17,11 +17,14 @@ public class UserMapper implements RowMapper<UserModel> {
 		user.setPassword(rs.getString("password"));
 		user.setFullname(rs.getString("fullname"));
 		user.setEmail(rs.getString("email"));
+		user.setAddress(rs.getString("address"));
 		user.setPhone(rs.getString("phone"));
 		user.setCreatedDate(rs.getTimestamp("createddate"));
 		user.setCreatedBy(rs.getString("createdby"));
 		user.setModifiedDate(rs.getTimestamp("modifieddate"));
 		user.setModifiedBy(rs.getString("modifiedby"));
+		user.setStatus(rs.getInt("status"));
+		user.setRole(rs.getLong("role"));
 		return user;
 	}
 

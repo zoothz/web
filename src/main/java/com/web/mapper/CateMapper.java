@@ -12,7 +12,6 @@ public class CateMapper implements RowMapper<CateModel> {
 	@Override
 	public CateModel mapRow(ResultSet rs, int rowNum) throws SQLException {
 		CateModel cate = new CateModel();
-		cate.setId(rs.getLong("id"));
 		cate.setName(rs.getString("name"));
 		cate.setCodel(rs.getString("code"));
 		cate.setCreatedDate(rs.getTimestamp("createddate"));

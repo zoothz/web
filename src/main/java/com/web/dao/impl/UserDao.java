@@ -5,12 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.web.dao.IUserDao;
 import com.web.mapper.UserMapper;
 import com.web.model.UserModel;
 
 @Repository
+@Transactional
 public class UserDao implements IUserDao {
 
 	@Autowired
@@ -60,7 +62,17 @@ public class UserDao implements IUserDao {
 	@Override
 	public UserModel findbyphone(String phone) {
 		String sql = "select * from account where phone = ?";
-		return jdbctemplate.queryForObject(sql, new UserMapper(),phone);
+		return jdbctemplate.queryForObject(sql, new UserMapper(), phone);
 	}
+
+	@Override
+	public boolean login(String username, String password) {
+		// TODO Auto-generated method stub
+		//String  sql="select * from account where username = ?,password = ?";
+		
+		return false;
+	}
+
+	
 
 }
