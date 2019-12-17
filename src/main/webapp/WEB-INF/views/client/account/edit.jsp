@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>register</title>
+<title>Update</title>
 </head>
 <body>
-<h1>register</h1>
+<h1>Update</h1>
 </body>
 </html>

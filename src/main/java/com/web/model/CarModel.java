@@ -6,7 +6,8 @@ public class CarModel extends AbsModel<CarModel> {
 	
 	private String name;
 	private Date buydate;
-	private UserModel buyuser;
+	private UserModel username;
+	
 	public String getName() {
 		return name;
 	}
@@ -19,11 +20,12 @@ public class CarModel extends AbsModel<CarModel> {
 	public void setBuydate(Date buydate) {
 		this.buydate = buydate;
 	}
-	public UserModel getBuyuser() {
-		return buyuser;
+	public UserModel getUsername() {
+		return username;
 	}
-	public void setBuyuser(UserModel buyuser) {
-		this.buyuser = buyuser;
+	public void setUsername(UserModel username) {
+		this.username = username;
 	}
+	
 	
 }	

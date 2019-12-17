@@ -5,12 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Account</title>
 </head>
 <body>
-	<h1>View Phone</h1>
-	<lable>${user.id }</label><br>
-	<lable>${user.username }</lable><br>
-	<lable>${user.email }</lable><br>
+<h1>Account</h1>
 </body>
 </html>

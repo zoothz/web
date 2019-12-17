@@ -43,8 +43,10 @@
 								<td>${user.email }</td>
 								<td>${user.address }</td>
 								<td>${user.phone }</td>
-								<td>${user.status}</td>
-								<td>${user.role }</td>
+								<td><a href="#" id="status">${user.status}</a></td>
+								<td>
+									<a href="#" id="role"">${user.role }</a>
+								</td>
 								<td>
 									<a href="<c:url value='/admin/user/view/${user.id}' /> "> view </a>
 								</td>
@@ -59,6 +61,11 @@
 		<script>
 			var today = new Date();
 			document.getElementById("today").innerHTML = today;
+			
+			function changerole() {
+				var role();
+				
+			}
 		</script>
 	</div>
 

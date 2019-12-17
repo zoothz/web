@@ -53,7 +53,7 @@ public class UserDao implements IUserDao {
 
 	@Override
 	public void add(UserModel user) {
-		String sql = "insert into account(username,password,fullname,email,address,phone";
+		String sql = "insert into account(username,password,fullname,email,address,phone) Values(?,?,?,?,?,?)";
 		jdbctemplate.update(sql, user.getUsername(), user.getPassword(), user.getFullname(), user.getEmail(),
 				user.getAddress(), user.getPhone());
 
@@ -67,8 +67,7 @@ public class UserDao implements IUserDao {
 
 	@Override
 	public boolean login(String username, String password) {
-		// TODO Auto-generated method stub
-		//String  sql="select * from account where username = ?,password = ?";
+		
 		
 		return false;
 	}

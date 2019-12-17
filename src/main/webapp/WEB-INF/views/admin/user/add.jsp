@@ -9,12 +9,12 @@
 </head>
 <body>
 <form:form role="form" action="add" method="post" modelAttribute="user">
-	<label>userName</label><input type="text" name="username"/></br>
-	<label>password</label><input type="password" name="password"/><br>
-	<label>fullName</label><input type="text" name="fullname" /><br>
-	<label>email</label><input type="text" name="email" /><br>
-	<label>address</label><input type="text" name="address" /><br>
-	<label>phone</label><input type="text" name="phone" /><br>
+	<label>userName</label><input type="text" placeholder="Username" name="username"/><br>
+	<label>password</label><input type="password"placeholder="Password" name="password"/><br>
+	<label>fullName</label><input type="text" placeholder="FullName" name="fullname" /><br>
+	<label>email</label><input type="text" placeholder="Email" name="email" /><br>
+	<label>address</label><input type="text"placeholder="Address" name="address" /><br>
+	<label>phone</label><input type="text" placeholder="Phone" name="phone" /><br>
 	<button type="submit">add</button>
 </form:form>
 </body>

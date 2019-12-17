@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Trang chủ</title>
+	<title><dec:title default="Trang chủ" /></title>
 </head>
 <body>
 
